@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0d10">
 <title>WhatAlias</title>
 <link rel="icon" type="image/png" href="icon.png">
 <style>
@@ -29,11 +30,11 @@
   .menubar {
     position: relative;
     z-index: 20;
-    height: 30px;
+    height: calc(30px + env(safe-area-inset-top, 0px));
     flex: none;
     display: flex;
     align-items: center;
-    padding: 0 14px;
+    padding: env(safe-area-inset-top, 0px) calc(14px + env(safe-area-inset-right, 0px)) 0 calc(14px + env(safe-area-inset-left, 0px));
     background: rgba(28, 30, 34, 0.55);
     backdrop-filter: blur(24px) saturate(1.6);
     -webkit-backdrop-filter: blur(24px) saturate(1.6);
@@ -83,8 +84,8 @@
   .popover {
     position: absolute;
     z-index: 30;
-    top: 40px;
-    right: 8px;
+    top: calc(40px + env(safe-area-inset-top, 0px));
+    right: calc(8px + env(safe-area-inset-right, 0px));
     width: 260px;
     padding: 22px 20px 20px;
     border-radius: 18px;
@@ -183,7 +184,7 @@
   .deskfile {
     position: absolute;
     top: 28px;
-    left: 30px;
+    left: calc(30px + env(safe-area-inset-left, 0px));
     width: 96px;
     display: flex;
     flex-direction: column;
@@ -331,7 +332,7 @@
     flex: none;
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
   }
 
   .dock {
