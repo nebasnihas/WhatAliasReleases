@@ -427,15 +427,15 @@
     <div class="filecontent">
       <h1>Storing your sudo password in the Keychain for the WhatAlias command prefix</h1>
 
-      <h2>Step 1 - Store the password</h2>
+      <h2>Step 1: Store the password</h2>
       <p>In Terminal, add your sudo password to the Keychain. You will be prompted to type it.</p>
       <code class="term">security add-generic-password -a "$USER" -s whatalias-sudo -U -w</code>
 
-      <h2>Step 2 — Confirm it was added</h2>
+      <h2>Step 2: Confirm it was added</h2>
       <p>This should print the password you just stored.</p>
       <code class="term">security find-generic-password -w -s whatalias-sudo</code>
 
-      <h2>Step 3 — Create the prefix file</h2>
+      <h2>Step 3: Create the prefix file</h2>
       <p>Create a file containing this command and set it as the command prefix in WhatAlias.</p>
       <code class="term">security find-generic-password -w -s whatalias-sudo | sudo -S -v 2&gt;&amp;1</code>
     </div>
